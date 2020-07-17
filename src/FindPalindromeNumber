@@ -1,0 +1,30 @@
+package MathProblems;
+
+public class Palindrome {
+	
+	public void findPalindrome() {
+		
+		int n = 121;                 //num
+		int r = 0;                     //rev
+		int t = n;                     //temp - save it in temporary variable
+		
+		while (n>0) {
+			r = r*10;                //step 1: r = 0                                  step 2: r = 1*10 = 10           similarly step 3:
+			r = r + n%10;            //        r = 0 + 1 = 1                                  r = 10 + 2 = 12
+			n = n/10;                //        n = 121/10 = 12 (1.2 leave decimal             n = 12/10 = 1 (1.2 leave the decimal value)
+		}
+		if (r==t) {
+			System.out.println("Palindrome number");
+	} else {
+		System.out.println("It is not a Palindrome number.");
+	}
+		System.out.println("The given number is:" + t);
+		System.out.println("The reverse number is:" + r);	
+	}
+
+	public static void main(String[] args) {
+     Palindrome  myObj = new Palindrome();
+     myObj.findPalindrome();
+
+	}
+}
